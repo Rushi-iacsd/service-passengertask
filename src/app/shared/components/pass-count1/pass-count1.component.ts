@@ -8,7 +8,9 @@ import { Ipassenger } from '../../model/passenger';
 })
 export class PassCount1Component implements OnInit {
 
-   @Input() passArray !: Ipassenger[]
+   @Input() totalpasscount!: number;
+   @Input() getcheckIncount !: number;
+    
 
   constructor() { }
 

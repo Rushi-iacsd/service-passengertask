@@ -2,9 +2,11 @@
 
 <div class="card mb-4">
     <div class="card-body">
-        <p>
-            {{passObj.fullname}}
-        </p>
+       
+      <input type="text" [value]="passObj.fullname" 
+        [disabled]="!isEditable"
+      class="form-control mb-3 " #fname>
+
         <p>
             Check In Date : {{passObj.checkInDate?(passObj.checkInDate | date):"notcheckIn"}}
         </p>
@@ -12,8 +14,14 @@
             Children : {{passObj.children?passObj.children.length:0 }}
         </p>
         <p>
-            <button class="btn btn-primary">Edit</button>
-            <button class="btn btn-danger ml-2">Remove</button>
+          
+            <button mat-raised-button color="primary" *ngIf="!isEditable" (click)="onEdit()">Edit</button>
+
+            <button mat-raised-button color="primary" *ngIf="isEditable" (click)="onDone(fname.value)">Done</button>
+
+            <button mat-raised-button color="warn"  (click)="onRemove()">Remove</button>
+          
+
         </p>
     </div>
 </div>

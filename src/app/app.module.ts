@@ -4,6 +4,8 @@ import { AppComponent } from './app.component';
 import { PassengerDashboardComponent } from './shared/components/passenger-dashboard/passenger-dashboard.component';
 import { PassCard1Component } from './shared/components/pass-card1/pass-card1.component';
 import { PassCount1Component } from './shared/components/pass-count1/pass-count1.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { PassCount1Component } from './shared/components/pass-count1/pass-count1
     PassCount1Component,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
